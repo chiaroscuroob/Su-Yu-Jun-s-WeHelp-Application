@@ -29,8 +29,8 @@
       .wrap { max-width: 980px; margin: 16px auto 28px; padding: 0 16px; }
       .panel { display: none; border: 1px solid var(--border); background: var(--card); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
       .panel.active { display: block; }
-      h1 { margin: 0 0 10px; font-size: 22px; }
-      h2 { margin: 18px 0 8px; font-size: 18px; }
+      h1 { margin: 0 0 16px; font-size: 22px; }
+      h2 { margin: 24px 0 12px; font-size: 18px; }
       p.lead { color: var(--muted); margin-top: 4px; }
 
       .grid { display: grid; gap: 12px; }
@@ -40,10 +40,10 @@
         border-radius: 14px;
         background: #fffefb;
         box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        margin-bottom: 1.5rem;
       }
       .q h3 { margin: 0 0 8px; font-size: 16px; }
-      .q p { margin: 0; line-height: 1.7; }
-      
+      .q p { margin: 0; line-height: 1.7; margin-bottom: 16px;}
 
       .intro {
         text-align: center;
@@ -59,6 +59,51 @@
       .intro .lead {
         font-size: 16px;
         color: var(--muted);
+      }
+
+      p, li {
+      line-height: 1.8; /* 或 180% */
+      } 
+
+
+      /* Resume layout */
+      .resume {
+        display: grid;
+        grid-template-columns: 280px 1fr; /* 左側寬度可調 */
+        gap: 16px;
+        margin-top: 12px;
+      }
+
+      .resume .card {
+        background: #fffefb;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 20px;
+      }
+
+      .resume .left .photo img {
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        border: 1px solid var(--border);
+      }
+
+      .resume .left h3,
+      .resume .right h2,
+      .resume .right h3 {
+        margin: 12px 0 8px;
+      }
+
+      .resume .muted { color: var(--muted); font-size: 14px; }
+      .resume .tag  { display:inline-block; padding:4px 8px; border:1px solid var(--border);
+                      border-radius:999px; margin:4px 6px 0 0; background:#fffdf7; }
+      .resume ul { margin: 8px 0 0; padding-left: 20px; line-height: 1.8; }
+      .resume li { margin-bottom: 4px; }
+
+      /* 小裝置：改為單欄 */
+      @media (max-width: 860px){
+        .resume { grid-template-columns: 1fr; }
       }
 
       .inline-list { display: flex; flex-wrap: wrap; gap: 8px; }
